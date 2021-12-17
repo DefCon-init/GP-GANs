@@ -47,8 +47,8 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
- 
- ![](DataBase/example_results/merge_from_ofoct.jpg = 250x250)
+   
+   <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results//merge_from_ofoct.jpg" width="100" height="100">
 
  Under images you will find image samples from the training process: 
  
