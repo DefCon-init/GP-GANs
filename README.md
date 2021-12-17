@@ -1,3 +1,5 @@
+[REPORT](https://github.com/DefCon-init/GP-GANs/blob/master/GP-GAN.pdf) | [NOTEBOOK](https://github.com/DefCon-init/GP-GANs/blob/master/Image_Blending_using_GP_GANS.ipynb)
+
 # Introduction
 
 The aim of this project to implement the research paper on [GP-GAN: Towards Realistic High-Resolution Image Blending.](https://arxiv.org/pdf/1703.07195.pdf) The paper  uses the concept of Gaussian Poisson Blending to attempt to solve the problem of high resolution image blending. Given a source,destination and a mask image, our goal is to generate a realistic composite belnded image. We have used TensorFlow to implement this paper.
