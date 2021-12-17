@@ -100,6 +100,12 @@ blended_im = gp_gan(obj, bg, mask, gan_im_tens, inputdata, sess, args.image_size
  Under images you will find image samples from the training process: 
  
  | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_2.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_2.PNG" width="250" height="250">
+ 
+# Results
+
+| Source | Destination | Mask | Composited | Blended |
+| --- | --- | --- | --- | --- |
+| ![](DataBase/test_images/src.jpg) | ![](DataBase/test_images/dst.jpg) | ![](DataBase/test_images/mask_display.png) | ![](DataBase/test_images/copy-paste.png) | ![](DataBase/test_images/result.jpg) |
 
 # Pitfalls and Challenges
 
