@@ -51,9 +51,9 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
  ![](DataBase/example_results/merge_from_ofoct.jpg)
 
  Under images you will find image samples from the training process: 
-
- ![](DataBase/example_results/composed_image_1.PNG) ![](DataBase/example_results/composed_image_2.PNG) 
- ![](DataBase/example_results/real_image_1.PNG) ![](DataBase/example_results/real_image_2.PNG)
+ 
+ | ![](DataBase/example_results/composed_image_1.PNG) | ![](DataBase/example_results/composed_image_2.PNG) | ![](DataBase/example_results/real_image_1.PNG) | ![](DataBase/example_results/real_image_2.PNG)
+ 
 ### Blending images with GP-GAN
 
 After training the GAN, we can load the weights and blend images. The supported input is a source image, a destination image and a binary mask.
