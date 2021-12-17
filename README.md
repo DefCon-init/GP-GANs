@@ -2,7 +2,7 @@
 
 The aim of this project to implement the research paper on [GP-GAN: Towards Realistic High-Resolution Image Blending.](https://arxiv.org/pdf/1703.07195.pdf) The paper  uses the concept of Gaussian Poisson Blending to attempt to solve the problem of high resolution image blending. Given a source,destination and a mask image, our goal is to generate a realistic composite belnded image. We have used TensorFlow to implement this paper.
 
-The notebook is a google colab file which contains the steps to run the python files and the link to get download the dataset.
+The [notebook](https://github.com/DefCon-init/GP-GANs/blob/master/Image_Blending_using_GP_GANS.ipynb) is a google colab file which contains the steps to run the python files and the link to get download the dataset.
 
 # Requirements
 
