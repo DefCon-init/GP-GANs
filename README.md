@@ -12,6 +12,11 @@ The notebook is a google colab file which contains the steps to run the python f
 
 # Table Of Contents
 
+-  [Implementation Flow](#implementation-flow)
+-  [Graphs and Images](#graphs-and-Images)
+-  [Pitfalls and Challenges](#pitfalls-and-challenges)
+-  [Future Work](#future-work)
+
 # Implementation Flow
 
 Here is how you can use this algorithm to create your own blended images from a source and destination image
