@@ -48,11 +48,11 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
  
- ![](DataBase/example_results/merge_from_ofoct.jpg)
+ ![](DataBase/example_results/merge_from_ofoct.jpg = 250x250)
 
  Under images you will find image samples from the training process: 
  
- | ![](DataBase/example_results/composed_image_1.PNG) | ![](DataBase/example_results/composed_image_2.PNG) | ![](DataBase/example_results/real_image_1.PNG) | ![](DataBase/example_results/real_image_2.PNG)
+ | ![](DataBase/example_results/composed_image_1.PNG = 250x250) | ![](DataBase/example_results/composed_image_2.PNG = 250x250) | ![](DataBase/example_results/real_image_1.PNG = 250x250) | ![](DataBase/example_results/real_image_2.PNG = 250x250)
  
 ### Blending images with GP-GAN
 
