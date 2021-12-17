@@ -12,6 +12,11 @@ The notebook is a google colab file which contains the steps to run the python f
 
 # Table Of Contents
 
+-  [Implementation Flow](#implementation-flow)
+-  [Graphs and Images](#graphs-and-Images)
+-  [Pitfalls and Challenges](#pitfalls-and-challenges)
+-  [Future Work](#future-work)
+
 # Implementation Flow
 
 Here is how you can use this algorithm to create your own blended images from a source and destination image
@@ -35,23 +40,12 @@ def create_copy_pastes(root, folders, max_images, load_size, crop_size, crop_siz
     """
     This function creates copy paste images from the object and background cropped images
     """
-        obj = cv2.cvtColor(cv2.imread(obj_path), cv2.COLOR_BGR2RGB)  # source
-        bg = cv2.cvtColor(cv2.imread(bg_path), cv2.COLOR_BGR2RGB)  # background
-        w, h, _ = obj.shape
-        min_size = min(w, h)
-        ratio = load_size / min_size
-        rw, rh = int(np.ceil(w * ratio)), int(np.ceil(h * ratio))
-        sx, sy = np.random.randint(0, rw - crop_size+1), np.random.randint(0, rh - crop_size+1)
-
         obj_croped = _crop(obj, rw, rh, sx, sy, crop_size)
         bg_croped = _crop(bg, rw, rh, sx, sy, crop_size)
 
         copy_paste = bg_croped.copy()
         copy_paste[sx_cp:sx_cp + size, sx_cp:sx_cp + size, :] = obj_croped[ sx_cp:sx_cp + size,
                                                                             sx_cp:sx_cp + size, :]
-
-        tf_example = create_tf_example(copy_paste, bg_croped)
-        writer.write(tf_example.SerializeToString())
 ```
 
 In `train_blending_gan.py` file, we have defined function to initialize a blending GAN and set training parameters. In order to increase the accuracy of the GAN, the training parameters could be changed to increase the number of iterations and snapshot_interval. After running this file, checkpoints are created which is the weight of the model 
@@ -95,6 +89,12 @@ blended_im = gp_gan(obj, bg, mask, gan_im_tens, inputdata, sess, args.image_size
  Under images you will find image samples from the training process: 
  
  | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_2.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_2.PNG" width="250" height="250">
+ 
+# Results
+
+| Source | Destination | Mask | Composited | Blended |
+| --- | --- | --- | --- | --- |
+| ![](DataBase/test_images/src.jpg) | ![](DataBase/test_images/dst.jpg) | ![](DataBase/test_images/mask_display.png) | ![](DataBase/test_images/copy-paste.png) | ![](DataBase/test_images/result.jpg) |
 
 # Pitfalls and Challenges
 
