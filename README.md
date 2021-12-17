@@ -1,13 +1,9 @@
-# Tensorflow GP-GAN
+# GP-GAN
 
 Tensorflow implementation of [GP-GAN: Towards Realistic High-Resolution Image Blending](https://arxiv.org/pdf/1703.07195.pdf)
  by Hui-Kai Wu et al. You can find the original implementation in Chainer [here](https://github.com/wuhuikai/GP-GAN).
 
-_Currently, only the supervised learning approach is implemented_
-
 ### Installation
-
-Code tested in python 3.6.0 and Tensorflow 1.15.0.
 
 Install the requirements with:\
 `pip install -r requirements.txt`
@@ -16,7 +12,7 @@ Install the requirements with:\
 (To skip writing data paths in the following steps, place the downloaded Transient Attributes Dataset under 
 _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
 
-1. Download Transient Attributes Dataset [here](http://transattr.cs.brown.edu/files/aligned_images.tar)
+1. Download Transient Attributes Dataset [here](http://transattr.cs.brown.edu/)
 2. Crop the images using the bounding boxes at _DataBase/TransientAttributes/bbox.txt_
     ```
     python crop_aligned_images.py --data_root "path to imageAlignedLD"
@@ -52,11 +48,14 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
  
- ![](DataBase/example_results/tensorboard.png)
+ ![train_den_disc_component](DataBase\example_results\train_den_disc_component.PNG) ![train_disc_loss](DataBase\example_results\train_disc_loss.PNG)
+ ![train_disc_value_fake](DataBase\example_results\train_disc_value_fake.PNG) ![train_disc_value_real](DataBase\example_results\train_disc_value_real.PNG)
+ ![train_gen_l2_component.PNG](DataBase\example_results\train_gen_l2_component.PNG) ![train_gen_loss.PNG](DataBase\example_results\train_gen_loss.PNG)
 
  Under images you will find image samples from the training process: 
 
- ![](DataBase/example_results/composed_real.png) ![](DataBase/example_results/generated.png)
+ ![](DataBase\example_results\composed_image_1.PNG) ![](DataBase\example_results\composed_image_2.PNG) 
+ ![](DataBase\example_results\real_image_1.PNG) ![](DataBase\example_results\real_image_2.PNG)
 ### Blending images with GP-GAN
 
 After training the GAN, we can load the weights and blend images. The supported input is a source image, a destination image and a binary mask.
