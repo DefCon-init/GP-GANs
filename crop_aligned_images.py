@@ -22,6 +22,8 @@ def main():
         os.makedirs(args.result_folder)
     print('Cropped images will be saved to {} ...\n'.format(args.result_folder))
 
+    
+    #Cropping images according to the dimensions for each image mentioned in bbox.txt file.    
     with open(args.bbox_path) as f:
         for line in f:
             name, bbox = line.strip().split(':')

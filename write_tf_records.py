@@ -65,7 +65,9 @@ def _bytes_feature(value):
 
 
 def create_tf_example(encoded_image_data_cp, encoded_image_data_bg):
-
+    """
+    function to create example images by setting height,width,encoded image data of 
+    """
     image_format = b'jpg'
 
     height, width, _ = encoded_image_data_cp.shape
@@ -86,7 +88,9 @@ def create_tf_example(encoded_image_data_cp, encoded_image_data_bg):
 
 
 def _crop(im, rw, rh, sx, sy, crop_size):
-
+    """
+    function to crop the image
+    """
     im = cv2.resize(im, (rw, rh), interpolation=cv2.INTER_AREA)
     im = im[sy:sy + crop_size, sx:sx + crop_size, :]
 
@@ -94,7 +98,9 @@ def _crop(im, rw, rh, sx, sy, crop_size):
 
 
 def create_copy_pastes(root, folders, max_images, load_size, crop_size, crop_size_ratio, writer):
-
+    """
+    This function creates copy paste images from the object and background cropped images
+    """
     size = int(crop_size * crop_size_ratio)
     sx_cp = crop_size // 2 - size // 2
 
@@ -146,10 +152,12 @@ def main():
     folders = sorted(
         [folder for folder in os.listdir(args.dataset_dir) if os.path.isdir(os.path.join(args.dataset_dir, folder))])
     val_end = int(val_ratio * len(folders))
-
+    
+    #Calling function to create copy paste images from converted train images in serialized format and write into TFR folder
     create_copy_pastes(args.dataset_dir, folders[val_end:], 150000, load_size, image_size, ratio, writer_train)
     writer_train.close()
-
+    
+    #Calling function to create copy paste images frm converted validation images in serialized format and write into TFR folder
     create_copy_pastes(args.dataset_dir, folders[:val_end], 2048, load_size, image_size, ratio, writer_val)
     writer_val.close()
 
