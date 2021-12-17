@@ -48,11 +48,11 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
    
-   <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results//merge_from_ofoct.jpg" width="100" height="100">
+   <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/merge_from_ofoct.jpg" width="1500" height="1500">
 
  Under images you will find image samples from the training process: 
  
- | ![](DataBase/example_results/composed_image_1.PNG = 250x250) | ![](DataBase/example_results/composed_image_2.PNG = 250x250) | ![](DataBase/example_results/real_image_1.PNG = 250x250) | ![](DataBase/example_results/real_image_2.PNG = 250x250)
+ | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_2.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_2.PNG" width="250" height="250">
  
 ### Blending images with GP-GAN
 
