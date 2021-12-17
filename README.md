@@ -47,15 +47,13 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
- 
- ![train_den_disc_component](DataBase\example_results\train_den_disc_component.PNG) ![train_disc_loss](DataBase\example_results\train_disc_loss.PNG)
- ![train_disc_value_fake](DataBase\example_results\train_disc_value_fake.PNG) ![train_disc_value_real](DataBase\example_results\train_disc_value_real.PNG)
- ![train_gen_l2_component.PNG](DataBase\example_results\train_gen_l2_component.PNG) ![train_gen_loss.PNG](DataBase\example_results\train_gen_loss.PNG)
+   
+   <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/merge_from_ofoct.jpg" width="1500" height="1500">
 
  Under images you will find image samples from the training process: 
-
- ![](DataBase\example_results\composed_image_1.PNG) ![](DataBase\example_results\composed_image_2.PNG) 
- ![](DataBase\example_results\real_image_1.PNG) ![](DataBase\example_results\real_image_2.PNG)
+ 
+ | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/composed_image_2.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_1.PNG" width="250" height="250"> | <img src="https://github.com/DefCon-init/GP-GANs/blob/master/DataBase/example_results/real_image_2.PNG" width="250" height="250">
+ 
 ### Blending images with GP-GAN
 
 After training the GAN, we can load the weights and blend images. The supported input is a source image, a destination image and a binary mask.
