@@ -113,7 +113,7 @@ def create_copy_pastes(root, folders, max_images, load_size, crop_size, crop_siz
         min_size = min(w, h)
         ratio = load_size / min_size
         rw, rh = int(np.ceil(w * ratio)), int(np.ceil(h * ratio))
-        sx, sy = np.random.random_integers(0, rw - crop_size), np.random.random_integers(0, rh - crop_size)
+        sx, sy = np.random.randint(0, rw - crop_size+1), np.random.randint(0, rh - crop_size+1)
 
         obj_croped = _crop(obj, rw, rh, sx, sy, crop_size)
         bg_croped = _crop(bg, rw, rh, sx, sy, crop_size)
@@ -140,8 +140,8 @@ def main():
     image_size = 64
     val_ratio = 0.05
 
-    writer_train = tf.python_io.TFRecordWriter(args.out_path_train)
-    writer_val = tf.python_io.TFRecordWriter(args.out_path_val)
+    writer_train = tf.io.TFRecordWriter(args.out_path_train)
+    writer_val = tf.io.TFRecordWriter(args.out_path_val)
 
     folders = sorted(
         [folder for folder in os.listdir(args.dataset_dir) if os.path.isdir(os.path.join(args.dataset_dir, folder))])

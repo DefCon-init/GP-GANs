@@ -116,7 +116,7 @@ def deconv2d(inputdata, out_channel, kernel_size, padding='SAME',
     :param trainable:
     :return: tf.Tensor named ``output``
     """
-    with tf.variable_scope(name):
+    with tf.compat.v1.variable_scope(name):
         in_shape = inputdata.get_shape().as_list()
         channel_axis = 3 if data_format == 'channels_last' else 1
         in_channel = in_shape[channel_axis]
@@ -222,7 +222,7 @@ class DCGAN_D():  # encoder
         self.is_training = is_training
 
     def encode(self, x):
-        with tf.variable_scope(name_or_scope=self.scope_name, reuse= tf.AUTO_REUSE):
+        with tf.compat.v1.variable_scope(name_or_scope=self.scope_name, reuse= tf.AUTO_REUSE):
             x = conv2d(x, self.filters, 4, padding='SAME', stride=2, name='conv_1', w_init=conv_init, use_bias=False)
             x = tf.nn.leaky_relu(x, name='leaky_relu_1')
 

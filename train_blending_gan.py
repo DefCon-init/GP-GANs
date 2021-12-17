@@ -42,7 +42,7 @@ def main():
     parser.add_argument('--lr_g', type=float, default=0.002, help='Learning rate for Generator, default=0.002')
     parser.add_argument('--beta1', type=float, default=0.5, help='Beta for Adam, default=0.5')
     parser.add_argument('--l2_weight', type=float, default=0.99, help='Weight for l2 loss, default=0.999')
-    parser.add_argument('--train_steps', default=float("58000"), help='Max amount of training cycles')
+    parser.add_argument('--train_steps', default=float("25"), help='Max amount of training cycles')
     parser.add_argument('--batch_size', type=int, default=64, help='Input batch size')
 
     parser.add_argument('--data_root',
@@ -62,7 +62,7 @@ def main():
     parser.add_argument('--tboard_save_dir', default='tensorboard', help='location to save tboard records')
 
     parser.add_argument('--val_freq', type=int, default=500, help='frequency of validation')
-    parser.add_argument('--snapshot_interval', type=int, default=500, help='Interval of snapshot (steps)')
+    parser.add_argument('--snapshot_interval', type=int, default=1, help='Interval of snapshot (steps)')
 
     parser.add_argument('--weights_path', type=str, default=
                         None, help='path to checkpoint')
@@ -210,7 +210,7 @@ def main():
             # train the discriminator Diters times
 
             if cycle < 25 or cycle % 500 == 0:
-                Diters = 100
+                Diters = 10
 
             else:
                 Diters = args.d_iters
