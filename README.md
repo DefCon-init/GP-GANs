@@ -48,9 +48,7 @@ _'DataBase/TransientAttributes/imageAlignedLD'_ and use the default paths )
   _Notice that resuming training from a checkpoint that's older
    than the last logged value in tensorboard can result in a graph that goes back and forward again._
  
- ![train_den_disc_component](DataBase/example_results/train_den_disc_component.PNG) ![train_disc_loss](DataBase/example_results/train_disc_loss.PNG)
- ![train_disc_value_fake](DataBase/example_results/train_disc_value_fake.PNG) ![train_disc_value_real](DataBase/example_results/train_disc_value_real.PNG)
- ![train_gen_l2_component.PNG](DataBase/example_results/train_gen_l2_component.PNG) ![train_gen_loss.PNG](DataBase/example_results/train_gen_loss.PNG)
+ ![](DataBase/example_results/merge_from_ofoct.jpg)
 
  Under images you will find image samples from the training process: 
 
